@@ -1,0 +1,259 @@
+/* ========================
+   Global Styles
+======================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --primary-bg: #001f29;
+  --secondary-bg: #002b38;
+  --accent-blue: #5dade2;
+  --accent-green: #2ecc71;
+  --accent-red: #e74c3c;
+  --accent-yellow: #f1c40f;
+  --text-light: #ffffff;
+  --text-dark: #1c2833;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+/* ========================
+   App Main Layout
+======================== */
+.container-wrapper {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(130deg, var(--primary-bg), var(--secondary-bg));
+  padding: 2rem;
+}
+
+/* ========================
+   Todo Container (Glassmorphism Style)
+======================== */
+.todo-container {
+  width: 100%;
+  max-width: 650px;
+  min-height: 75vh;
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 45px;
+}
+
+.todo-container:hover {
+  transform: scale(1.01);
+}
+
+/* ========================
+   Header
+======================== */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+  border: 1px solid var(--glass-border);
+  border: 1px solid black;
+}
+
+.header h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.8rem;
+}
+
+.date-time {
+  font-size: 1.2rem;
+  opacity: 0.85;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+/* ========================
+   Form Input Area
+======================== */
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+form {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+}
+
+form input {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  border-radius: 10px 0 0 10px;
+  background-color: #f2f3f4;
+  color: var(--text-dark);
+    transition: all 0.2s ease-in-out;
+}
+
+form input::placeholder {
+  color: #555;
+  opacity: 0.6;
+}
+
+form input:focus {
+  background-color: #fff;
+  box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.2);
+}
+
+form button {
+  padding: 12px 18px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  background-color: rgb(72, 157, 248);
+  color: #fff;
+  transition: background-color 0.25s ease, transform 0.15s ease-in-out;
+}
+
+form button:hover {
+  cursor: pointer;
+  background-color: var(--accent-yellow);
+  color: var(--text-dark);
+  transform: translateY(-2px);
+}
+
+/* ========================
+   Todo List Items
+======================== */
+.myUnOrdList {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.todo-list {
+  list-style: none;
+  width: 100%;
+  max-width: 500px;
+}
+
+.todo-item {
+  background: #ffffff;
+  margin: 1rem 0;
+  padding: 1rem 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 5px 15px;
+  transition: all 0.25s ease-in-out;
+}
+
+.todo-item:hover {
+  transform: scale(1.02);
+  background-color: #fefefe;
+}
+
+.todo-item span {
+  overflow-wrap: anywhere;
+  font-weight: 500;
+}
+
+.checkList {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.notCheckList {
+  text-decoration: none;
+  opacity: 1;
+}
+
+/* ========================
+   Buttons inside Todo Items
+======================== */
+.check-btn,
+.delete-btn {
+  border: none;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #000000;
+  transition: transform 0.2s ease-in-out;
+}
+
+.check-btn {
+  background-color: var(--accent-green);
+  color:#ffff;
+}
+
+.check-btn:hover {
+  transform: scale(1.1);
+}
+
+.delete-btn {
+  background-color: var(--accent-red);
+    color:#ffff;
+
+}
+
+.delete-btn:hover {
+  transform: scale(1.1);
+  background-color: #c0392b;
+}
+
+/* ========================
+   Clear All Button
+======================== */
+.clear-btn {
+  align-self: center;
+  margin-top: 2rem;
+  background: var(--accent-red);
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.clear-btn:hover {
+  background-color: #8d1407;
+  transform: translateY(-2px);
+}
+.check-btn svg, .delete-btn svg {
+  color: #fff !important;
+  font-size: 1.35em !important;
+  display: inline;
+  vertical-align: middle;
+}
