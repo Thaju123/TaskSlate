@@ -57,7 +57,7 @@ export const Todo = () => {
     <div className="container-wrapper">
  <section className="todo-container">
       <header>
-        <h1 >Todo List </h1>
+        <h1 >Task-Slate</h1>
         <TodoDate />
       </header>
 
